@@ -1,0 +1,27 @@
+application:
+  subdomain: mealie
+  background_task: true
+  multi_instance: false
+  upstreams:
+    - location: /
+      backend: http://mealie:9000/
+services:
+  mealie:
+    # upstream: ghcr.io/mealie-recipes/mealie:v3.25.1
+    image: ghcr.1ms.run/mealie-recipes/mealie:v3.25.1
+    mem_limit: 1000M
+    environment:
+      - ALLOW_SIGNUP=false
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Anchorage
+      - BASE_URL=https://{{ .S.AppDomain }}
+    binds:
+      - /lzcapp/var/data:/app/data
+usage: |
+  默认登录账号：changeme@example.com
+  默认密码：MyPassword
+  首次登录后请修改默认账号与密码。已禁止公开注册，保留手动登录。
+  食谱、图片、数据库和备份持久化在 /lzcapp/var/data。
+  时区沿用原 Compose 的 America/Anchorage，内存限制为 1000M。
+  应用地址自动使用当前懒猫域名；不注入文件选择器。

@@ -1,0 +1,15 @@
+package: community.lazycat.app.mealie
+version: 3.25.1
+name: Mealie
+description: Mealie is a self hosted recipe manager and meal planner with a RestAPI backend and a reactive frontend application built in Vue for a pleasant user experience for the whole family. Easily add recipes into your database by providing the url and mealie will automatically import the relevant data or add a family recipe with the UI editor
+homepage: https://github.com/mealie-recipes/mealie/
+author: mealie-recipes
+license: AGPL-3.0
+min_os_version: 1.5.0
+locales:
+  zh:
+    name: Mealie
+    description: 为全家打造的自托管食谱管理和膳食计划工具，支持通过网址导入食谱、可视化编辑与 REST API。
+  en:
+    name: Mealie
+    description: A self-hosted recipe manager and meal planner for the whole family, with URL imports, a visual editor and a REST API.
