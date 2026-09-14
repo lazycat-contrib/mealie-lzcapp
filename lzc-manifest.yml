@@ -7,8 +7,8 @@ application:
       backend: http://mealie:9000/
 services:
   mealie:
-    # upstream: ghcr.io/mealie-recipes/mealie:v3.25.1
-    image: ghcr.1ms.run/mealie-recipes/mealie:v3.25.1
+    # upstream: ghcr.io/mealie-recipes/mealie:v3.26.0
+    image: ghcr.1ms.run/mealie-recipes/mealie:v3.26.0
     mem_limit: 1000M
     environment:
       - ALLOW_SIGNUP=false
